@@ -1,0 +1,40 @@
+.container{
+    height: 100vh;
+    background-image: url("https://wallpapers.com/images/hd/cinema-background-psrlw0g60cgq94fq.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 230px;
+}
+.form-boton{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.form{
+    display: flex;
+    gap: 40px;
+}
+.botones{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+input{
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+    outline: none;
+}
+button{
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+}

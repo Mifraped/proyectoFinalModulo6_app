@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-left: 100px;
+    height: 130px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 10%, rgba(40,40,59,1) 70%);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+h1{
+    font-size: 40px;
+    font-family: cursive;
+}
+a{
+    font-size: 20px;
+    text-decoration: none;
+    font-family: cursive;
+    color: #FEBE10;
+}
