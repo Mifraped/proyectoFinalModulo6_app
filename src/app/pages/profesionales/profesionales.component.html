@@ -1,19 +1,21 @@
 <div class="container">
     <div class="form-boton">
         <div class="form">
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Apellido">
-            <input type="number" placeholder="Edad">
-            <input type="text" placeholder="Esta retirado?">
-            <input type="text" placeholder="Nacionalidad">
-            <input type="number" placeholder="Numero de oscars">
-            <input type="text" placeholder="Profesion">
+            <input type="text" placeholder="Nombre" #nombre>
+            <input type="text" placeholder="Apellido" #apellido>
+            <input type="number" placeholder="Edad" #edad>
+            <input type="text" placeholder="Esta retirado?" #retirado>
+            <input type="text" placeholder="Nacionalidad" #nacionalidad>
+            <input type="number" placeholder="Numero de oscars" #oscars>
+            <input type="text" placeholder="Profesion" #profesion>
         </div>
         <div class="botones">
-            <button type="button">Mostrar</button>
-            <button type="button">Añadir</button>
-            <button type="button">Editar</button>
-            <button type="button">Eliminar</button>
+            <button type="button" (click)="muestraProf(nombre, apellido)">Mostrar</button>
+            <button type="button"
+                (click)="anyade(nombre, apellido, edad, retirado, nacionalidad, oscars, profesion)">Añadir</button>
+            <button type="button"
+                (click)="edita(nombre, apellido, edad, retirado, nacionalidad, oscars, profesion)">Editar</button>
+            <button type="button" (click)="elimina(nombre, apellido)">Eliminar</button>
         </div>
     </div>
     <div class="mostrador">
