@@ -4,7 +4,11 @@
             <input type="text" placeholder="Nombre" #nombre>
             <input type="text" placeholder="Apellido" #apellido>
             <input type="number" placeholder="Edad" #edad>
-            <input type="text" placeholder="Esta retirado?(y/n)" #retirado>
+            <select #retirado>
+                <option value="" selected disabled hidden>Esta retirado?</option>
+                <option value="true">Si</option>
+                <option value="false">No</option>
+            </select>
             <input type="text" placeholder="Nacionalidad" #nacionalidad>
             <input type="number" placeholder="Numero de oscars" #oscars>
             <input type="text" placeholder="Profesion" #profesion>

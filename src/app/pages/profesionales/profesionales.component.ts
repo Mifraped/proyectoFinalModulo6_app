@@ -28,11 +28,11 @@ export class ProfesionalesComponent {
     }
   }
 
-  public anyade(nombre: HTMLInputElement, apellido: HTMLInputElement, edad: HTMLInputElement, retirado: HTMLInputElement, nacionalidad: HTMLInputElement, oscars: HTMLInputElement, profesion: HTMLInputElement){
+  public anyade(nombre: HTMLInputElement, apellido: HTMLInputElement, edad: HTMLInputElement, retirado: HTMLSelectElement, nacionalidad: HTMLInputElement, oscars: HTMLInputElement, profesion: HTMLInputElement){
 
     if(nombre.value && apellido.value && edad.value && retirado.value && nacionalidad.value && oscars.value && profesion.value){
 
-      let newProf = new Profesional(nombre.value, apellido.value, Number(edad.value), retirado.value === "y" ? true : false, nacionalidad.value, Number(oscars.value), profesion.value)
+      let newProf = new Profesional(nombre.value, apellido.value, Number(edad.value), retirado.value==="true"?true:false, nacionalidad.value, Number(oscars.value), profesion.value)
 
       this.profesionalService.postProf(newProf).subscribe((resp: Respuesta) => {
         this.muestraProf(nombre, apellido)
@@ -47,11 +47,11 @@ export class ProfesionalesComponent {
     }else alert("Faltan campos por rellenar")
   }
 
-  public edita(nombre: HTMLInputElement, apellido: HTMLInputElement, edad: HTMLInputElement, retirado: HTMLInputElement, nacionalidad: HTMLInputElement, oscars: HTMLInputElement, profesion: HTMLInputElement){
+  public edita(nombre: HTMLInputElement, apellido: HTMLInputElement, edad: HTMLInputElement, retirado: HTMLSelectElement, nacionalidad: HTMLInputElement, oscars: HTMLInputElement, profesion: HTMLInputElement){
 
     if(nombre.value && apellido.value && edad.value && retirado.value && nacionalidad.value && oscars.value && profesion.value){
 
-      let newProf = new Profesional(nombre.value, apellido.value, Number(edad.value), Boolean(retirado.value), nacionalidad.value, Number(oscars.value), profesion.value)
+      let newProf = new Profesional(nombre.value, apellido.value, Number(edad.value), retirado.value==="true"?true:false, nacionalidad.value, Number(oscars.value), profesion.value)
 
       this.profesionalService.putProf(newProf).subscribe((resp: Respuesta) => {
         this.muestraProf(nombre, apellido)
