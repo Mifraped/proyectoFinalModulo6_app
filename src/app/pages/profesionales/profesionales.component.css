@@ -1,5 +1,5 @@
 .container{
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("https://wallpapers.com/images/hd/cinema-background-psrlw0g60cgq94fq.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -34,7 +34,14 @@ button{
     height: 30px;
     width: 100px;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #FEBE10;
     border: none;
     cursor: pointer;
+}
+.mostrador{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 100px;
 }

@@ -4,7 +4,7 @@
             <input type="text" placeholder="Nombre" #nombre>
             <input type="text" placeholder="Apellido" #apellido>
             <input type="number" placeholder="Edad" #edad>
-            <input type="text" placeholder="Esta retirado?" #retirado>
+            <input type="text" placeholder="Esta retirado?(y/n)" #retirado>
             <input type="text" placeholder="Nacionalidad" #nacionalidad>
             <input type="number" placeholder="Numero de oscars" #oscars>
             <input type="text" placeholder="Profesion" #profesion>
@@ -19,6 +19,6 @@
         </div>
     </div>
     <div class="mostrador">
-
+        <app-tarjeta [profPadre]="prof" *ngFor="let prof of profesionalService.profesionales"></app-tarjeta>
     </div>
 </div>

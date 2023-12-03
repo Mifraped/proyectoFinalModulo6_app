@@ -1,12 +1,13 @@
 .container{
     height: 100vh;
-    background-image: url("https://www.shutterstock.com/image-vector/realistic-cinema-background-film-strip-600nw-1917915077.jpg");
+    background-image: url("https://www.shutterstock.com/image-photo/movie-reel-on-black-background-600nw-1041634678.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-position: 0 80px;
 }
 h1{
     font-size: 60px;

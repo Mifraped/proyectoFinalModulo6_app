@@ -10,7 +10,7 @@ import { ProfesionalServiceService } from 'src/app/shared/profesional-service.se
 })
 export class ProfesionalesComponent {
 
-  constructor(private profesionalService: ProfesionalServiceService){
+  constructor(public profesionalService: ProfesionalServiceService){
 
   }
 
@@ -32,9 +32,10 @@ export class ProfesionalesComponent {
 
     if(nombre.value && apellido.value && edad.value && retirado.value && nacionalidad.value && oscars.value && profesion.value){
 
-      let newProf = new Profesional(nombre.value, apellido.value, Number(edad.value), Boolean(retirado.value), nacionalidad.value, Number(oscars.value), profesion.value)
+      let newProf = new Profesional(nombre.value, apellido.value, Number(edad.value), retirado.value === "y" ? true : false, nacionalidad.value, Number(oscars.value), profesion.value)
 
       this.profesionalService.postProf(newProf).subscribe((resp: Respuesta) => {
+        this.muestraProf(nombre, apellido)
       })
       nombre.value = ""
       apellido.value = ""
@@ -53,6 +54,7 @@ export class ProfesionalesComponent {
       let newProf = new Profesional(nombre.value, apellido.value, Number(edad.value), Boolean(retirado.value), nacionalidad.value, Number(oscars.value), profesion.value)
 
       this.profesionalService.putProf(newProf).subscribe((resp: Respuesta) => {
+        this.muestraProf(nombre, apellido)
       })
       nombre.value = ""
       apellido.value = ""
@@ -65,7 +67,8 @@ export class ProfesionalesComponent {
   }
 
   public elimina(nombre: HTMLInputElement, apellido: HTMLInputElement){
-    this.profesionalService.deleteProf(nombre.value, apellido.value).subscribe((resp: Respuesta) => {      
+    this.profesionalService.deleteProf(nombre.value, apellido.value).subscribe((resp: Respuesta) => {
+      this.muestraProf(nombre, apellido)
     })
     nombre.value = ""
     apellido.value = ""    
